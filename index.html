@@ -60,6 +60,20 @@
             content: 'Xu Ran';
         }
 
+        /* 项目标题设置为蓝色 */
+        .project-title {
+            color: blue;
+            text-decoration: none;
+        }
+        .project-title:hover {
+            text-decoration: underline;
+        }
+        /* 项目描述样式 */
+        .project-description {
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
         /* ========== 响应式：小屏幕时变为单列布局 ========== */
         @media (max-width: 992px) {
             /* 1. 取消左侧固定，改为正常流 */
@@ -70,7 +84,7 @@
                 overflow: visible;
                 background: #fff;
             }
-            /* 2. 隐藏右侧空白栏或让它也变为正常流（这里选择隐藏） */
+            /* 2. 隐藏右侧空白栏 */
             .right-column {
                 display: none; 
             }
@@ -137,9 +151,13 @@
             <!-- Project 1 -->
             <ul class="work-list">
                 <li>Sep 2024 - Feb 2025</li>
-                <li><a href="#">Intelligent Dressing: Integrating Vision Perception with Neural Trajectory Planning in a Bimanual Robotic System</a></li>
+                <li><a href="#" class="project-title">Intelligent Dressing: Integrating Vision Perception with Neural Trajectory Planning in a Bimanual Robotic System</a></li>
                 <li>Web Designer</li>
             </ul>
+            <!-- 描述栏 -->
+            <div class="project-description">
+                <p>Description for Intelligent Dressing project goes here.</p>
+            </div>
             <div class="project-videos flex-row" style="display: flex; gap: 10px; margin-bottom: 20px;">
                 <video controls style="flex: 1;">
                     <source src="videos/dressing1.mp4" type="video/mp4">
@@ -149,14 +167,16 @@
                 </video>
             </div>
             
-            
-
             <!-- Project 2 -->
             <ul class="work-list">
                 <li>Dec 2024 - Mar 2025</li>
-                <li><a href="#">Robotic Demonstration Learning and Adaptive Motion Generation</a></li>
+                <li><a href="#" class="project-title">Robotic Demonstration Learning and Adaptive Motion Generation</a></li>
                 <li>UI/UX Designer</li>
             </ul>
+            <!-- 描述栏 -->
+            <div class="project-description">
+                <p>Description for Robotic Demonstration Learning project goes here.</p>
+            </div>
             <div class="project-videos flex-row" style="display: flex; gap: 10px; margin-bottom: 20px;">
                 <video controls style="flex: 1;">
                     <source src="videos/demonstration1.mp4" type="video/mp4">
@@ -166,36 +186,22 @@
                 </video>
             </div>
             
-            <ul class="work-list">
-                <li>Sep 2024 - Feb 2025</li>
-                <li><a href="#">Intelligent Dressing: Integrating Vision Perception with Neural Trajectory Planning in a Bimanual Robotic System</a></li>
-                <li>Web Designer</li>
-            </ul>
-            <div class="project-videos flex-row" style="display: flex; gap: 10px; margin-bottom: 20px;">
-                <video controls style="flex: 1;">
-                    <source src="videos/dressing1.mp4" type="video/mp4">
-                </video>
-                <video controls style="flex: 1;">
-                    <source src="videos/dressing2.mp4" type="video/mp4">
-                </video>
-            </div>
-
-
-
-            
             <!-- Project 3 -->
             <ul class="work-list">
                 <li>Feb 2025 - Present</li>
-                <li><a href="#">Trajectory generation and control of crop picking robots driven by PointNet</a></li>
+                <li><a href="#" class="project-title">Trajectory generation and control of crop picking robots driven by PointNet</a></li>
                 <li>System Designer</li>
             </ul>
+            <!-- 描述栏 -->
+            <div class="project-description">
+                <p>Description for Trajectory Generation project goes here.</p>
+            </div>
             <div class="project-videos" style="margin-bottom: 20px;">
                 <video controls width="560">
                     <source src="videos/trajectory.mp4" type="video/mp4">
                 </video>
             </div>
         </div>
-        
 
         <!-- Quote -->
         <div class="quote">
