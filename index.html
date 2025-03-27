@@ -14,7 +14,7 @@
     <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
     <style>
         .intro h1:before {
-            /* Edit this with your name or anything else */
+            /* 修改成你的名字 */
             content: 'Xu Ran';
         }
     </style>
@@ -41,26 +41,22 @@
     <div class="intro section" id="about">
         <div class="container">
             <p>Hi</p>
-            <!-- 使用 units-row + unit-20 / unit-80 布局，使左侧为头像，右侧为文字 -->
+            <!-- 使用 units-row + unit-20 / unit-80 布局，使头像与文字对齐 -->
             <div class="units-row units-split wrap">
-                
                 <!-- 左侧头像 -->
                 <div class="unit-20">
                     <img src="img/ava.jpg" alt="Avatar" style="max-width: 300px; border-radius: 20%;">
                 </div>
-                
-                <!-- 右侧文字内容 -->
+                <!-- 右侧介绍文字及联系方式 -->
                 <div class="unit-80">
                     <p>
                         My name is Xu Ran, currently working as a research assistant at the University of Essex. 
                         I have experience in multiple robotics application projects, such as smart dressing systems, 
-                        robot learning, and smart garbage sorting. My research primarily focuses robot control 
+                        robot learning, and smart garbage sorting. My research primarily focuses on robot control 
                         and deep learning, and I am committed to applying advanced robotics technology to the 
                         fields of medical assistance and industrial collaboration.
                         Welcome to visit my project videos and related research results!
                     </p>
-
-                    <!-- 下面是位置信息、学校信息和邮箱的图标+文字 -->
                     <div class="contact-info" style="margin-top: 20px;">
                         <ul style="list-style: none; padding-left: 0; font-size: 1.1em;">
                             <li><i class="fa fa-map-marker"></i> Colchester, UK</li>
@@ -73,25 +69,56 @@
         </div>
     </div>
 
-    <!-- Work Experience -->
+    <!-- Work Experience / Projects -->
     <div class="work section second" id="experiences">
         <div class="container">
             <h1>Projects</h1>
+            <!-- Project 1: Intelligent Dressing (对应两个视频) -->
             <ul class="work-list">
                 <li>Sep 2024 - Feb 2025</li>
                 <li><a href="#">Intelligent Dressing: Integrating Vision Perception with Neural Trajectory Planning in a Bimanual Robotic System</a></li>
                 <li>Web Designer</li>
             </ul>
+            <div class="project-videos" style="margin-bottom: 20px;">
+                <video controls width="560">
+                    <source src="videos/dressing1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video controls width="560" style="margin-top:10px;">
+                    <source src="videos/dressing2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <!-- Project 2: Robotic Demonstration Learning (对应两个视频) -->
             <ul class="work-list">
                 <li>Dec 2024 - Mar 2025</li>
                 <li><a href="#">Robotic Demonstration Learning and Adaptive Motion Generation</a></li>
                 <li>UI/UX Designer</li>
             </ul>
+            <div class="project-videos" style="margin-bottom: 20px;">
+                <video controls width="560">
+                    <source src="videos/demonstration1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video controls width="560" style="margin-top:10px;">
+                    <source src="videos/demonstration2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <!-- Project 3: Trajectory Generation (对应一个视频) -->
             <ul class="work-list">
                 <li>Feb 2025 - Present</li>
                 <li><a href="#">Trajectory generation and control of crop picking robots driven by PointNet</a></li>
                 <li>System Designer</li>
             </ul>
+            <div class="project-videos" style="margin-bottom: 20px;">
+                <video controls width="560">
+                    <source src="videos/trajectory.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
         </div>
     </div>
 
@@ -113,7 +140,6 @@
         function newTyped(){}
         $(function(){
             $("#typed").typed({
-                // Change to edit type effect
                 strings: ["far northern sky", "your galaxy", "everywhere"],
                 typeSpeed:90,
                 backDelay:700,
