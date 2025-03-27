@@ -74,6 +74,12 @@
             font-style: italic;
         }
 
+        /* 限制视频最大宽度，使其不会超过中间栏 */
+        .project-videos video {
+            max-width: 100%;
+            height: auto;
+        }
+
         /* ========== 响应式：小屏幕时变为单列布局 ========== */
         @media (max-width: 992px) {
             .left-column {
@@ -225,7 +231,7 @@
                 <p>Description for Smart Garbage Sorting project goes here.</p>
             </div>
             <div class="project-videos" style="margin-bottom: 20px;">
-                <video controls width="560">
+                <video controls>
                     <source src="video/garbage.mp4" type="video/mp4">
                 </video>
             </div>
