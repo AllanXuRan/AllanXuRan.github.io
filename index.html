@@ -12,32 +12,48 @@
     <link href='https://fonts.googleapis.com/css?family=Playfair+Display+SC:700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
     <style>
-        /* 顶部导航下方留出一定空间（此处假设导航高度大约60px） */
+        /* 让页面顶部导航固定 */
+        .main-nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 999;
+        }
         body {
             margin: 0;
             padding: 0;
         }
 
-        /* 固定左侧个人简介栏 */
+        /* 左侧固定栏（个人简介） */
         .left-column {
             position: fixed;
-            top: 60px;          /* 根据导航高度调整 */
+            top: 60px;       /* 根据导航栏实际高度微调 */
             left: 0;
-            width: 400px;       /* 左侧栏宽度可自行调整 */
-            bottom: 0;          /* 占满剩余高度 */
-            overflow-y: auto;   /* 如果内容超出，则出现滚动条 */
-            background: #fff;   /* 背景色可自行调整 */
+            width: 400px;    /* 左侧宽度 */
+            bottom: 0;
+            overflow-y: auto;
+            background: #fff; /* 可根据需要换颜色 */
             padding: 20px;
         }
 
-        /* 右侧内容，给左侧栏留出空间 */
+        /* 右侧固定栏（空白） */
         .right-column {
-            margin-left: 400px; /* 与 left-column 的宽度一致 */
-            margin-top: 60px;   /* 与导航栏高度一致 */
+            position: fixed;
+            top: 60px;       /* 同导航高度 */
+            right: 0;
+            width: 400px;    /* 与左侧相同宽度 */
+            bottom: 0;
+            background: #fff; 
+            /* 如果希望完全空白，可以改为 transparent，或者保持白色 */
+        }
+
+        /* 中间主内容，让出左右 400px 空间 */
+        .center-content {
+            margin: 60px 400px 0 400px;  /* 上侧给导航留 60px，下侧可根据需要调整 */
             padding: 20px;
         }
 
-        /* 个人简介中的标题 */
+        /* 个人简介中的标题（可自行修改） */
         .intro h1:before {
             content: 'Xu Ran';
         }
@@ -45,7 +61,7 @@
 </head>
 <body>
     <!-- 顶部导航 -->
-    <div class="main-nav" style="position: fixed; top: 0; width: 100%; z-index: 999;">
+    <div class="main-nav">
         <div class="container">
             <header class="group top-nav">
                 <div class="navigation-toggle" data-tools="navigation-toggle" data-target="#navbar-1">
@@ -61,14 +77,13 @@
         </div>
     </div>
 
-    <!-- 左侧个人简介栏 -->
+    <!-- 左侧固定栏：个人简介 -->
     <div class="left-column">
-        <!-- 可以把原本 "About" 里的个人简介全部放这里 -->
         <div class="intro" id="about">
             <p>Hi</p>
             <!-- 头像和文字 -->
             <div style="text-align: center;">
-                <img src="img/ava.jpg" alt="Avatar" style="max-width: 400px; border-radius: 20%;">
+                <img src="img/ava.jpg" alt="Avatar" style="max-width: 300px; border-radius: 20%;">
             </div>
             <p>
                 My name is Xu Ran, currently working as a research assistant at the University of Essex. 
@@ -88,8 +103,13 @@
         </div>
     </div>
 
-    <!-- 右侧主要内容 -->
+    <!-- 右侧固定栏：留白（空白区域） -->
     <div class="right-column">
+        <!-- 这里什么都不放 -->
+    </div>
+
+    <!-- 中间主要内容（可滚动） -->
+    <div class="center-content">
         <!-- Projects -->
         <div class="work section second" id="experiences">
             <h1>Projects</h1>
