@@ -14,8 +14,16 @@
     <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
     <style>
         .intro h1:before {
-            /* 修改成你的名字 */
             content: 'Xu Ran';
+        }
+        /* Flex 布局使两个视频并排显示 */
+        .project-videos.flex-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .project-videos.flex-row video {
+            flex: 1;
         }
     </style>
 </head>
@@ -73,35 +81,35 @@
     <div class="work section second" id="experiences">
         <div class="container">
             <h1>Projects</h1>
-            <!-- Project 1: Intelligent Dressing (对应两个视频) -->
+            <!-- Project 1: Intelligent Dressing (对应两个视频，并排显示) -->
             <ul class="work-list">
                 <li>Sep 2024 - Feb 2025</li>
                 <li><a href="#">Intelligent Dressing: Integrating Vision Perception with Neural Trajectory Planning in a Bimanual Robotic System</a></li>
                 <li>Web Designer</li>
             </ul>
-            <div class="project-videos" style="margin-bottom: 20px;">
-                <video controls width="560">
+            <div class="project-videos flex-row">
+                <video controls>
                     <source src="videos/dressing1.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-                <video controls width="560" style="margin-top:10px;">
+                <video controls>
                     <source src="videos/dressing2.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
 
-            <!-- Project 2: Robotic Demonstration Learning (对应两个视频) -->
+            <!-- Project 2: Robotic Demonstration Learning (对应两个视频，并排显示) -->
             <ul class="work-list">
                 <li>Dec 2024 - Mar 2025</li>
                 <li><a href="#">Robotic Demonstration Learning and Adaptive Motion Generation</a></li>
                 <li>UI/UX Designer</li>
             </ul>
-            <div class="project-videos" style="margin-bottom: 20px;">
-                <video controls width="560">
+            <div class="project-videos flex-row">
+                <video controls>
                     <source src="videos/demonstration1.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-                <video controls width="560" style="margin-top:10px;">
+                <video controls>
                     <source src="videos/demonstration2.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
