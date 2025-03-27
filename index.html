@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Xu Ran Projects </title>
+    <title>Xu Ran Projects</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Draco is free PSD &amp; HTML template by @afnizarnur">
-    <meta name="author" content="">
+    <!-- Kube CSS 等样式文件 -->
     <link rel="stylesheet" href="css/kube.min.css" />
     <link rel="stylesheet" href="css/font-awesome.min.css" />
     <link rel="stylesheet" href="css/custom.min.css" />
@@ -13,23 +12,40 @@
     <link href='https://fonts.googleapis.com/css?family=Playfair+Display+SC:700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
     <style>
+        /* 顶部导航下方留出一定空间（此处假设导航高度大约60px） */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 固定左侧个人简介栏 */
+        .left-column {
+            position: fixed;
+            top: 60px;          /* 根据导航高度调整 */
+            left: 0;
+            width: 300px;       /* 左侧栏宽度可自行调整 */
+            bottom: 0;          /* 占满剩余高度 */
+            overflow-y: auto;   /* 如果内容超出，则出现滚动条 */
+            background: #fff;   /* 背景色可自行调整 */
+            padding: 20px;
+        }
+
+        /* 右侧内容，给左侧栏留出空间 */
+        .right-column {
+            margin-left: 300px; /* 与 left-column 的宽度一致 */
+            margin-top: 60px;   /* 与导航栏高度一致 */
+            padding: 20px;
+        }
+
+        /* 个人简介中的标题 */
         .intro h1:before {
             content: 'Xu Ran';
-        }
-        /* Flex 布局使两个视频并排显示 */
-        .project-videos.flex-row {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-        .project-videos.flex-row video {
-            flex: 1;
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <div class="main-nav">
+    <!-- 顶部导航 -->
+    <div class="main-nav" style="position: fixed; top: 0; width: 100%; z-index: 999;">
         <div class="container">
             <header class="group top-nav">
                 <div class="navigation-toggle" data-tools="navigation-toggle" data-target="#navbar-1">
@@ -45,77 +61,70 @@
         </div>
     </div>
 
-    <!-- Introduction -->
-    <div class="intro section" id="about">
-        <div class="container">
+    <!-- 左侧个人简介栏 -->
+    <div class="left-column">
+        <!-- 可以把原本 "About" 里的个人简介全部放这里 -->
+        <div class="intro" id="about">
             <p>Hi</p>
-            <!-- 使用 units-row + unit-20 / unit-80 布局，使头像与文字对齐 -->
-            <div class="units-row units-split wrap">
-                <!-- 左侧头像 -->
-                <div class="unit-20">
-                    <img src="img/ava.jpg" alt="Avatar" style="max-width: 300px; border-radius: 20%;">
-                </div>
-                <!-- 右侧介绍文字及联系方式 -->
-                <div class="unit-80">
-                    <p>
-                        My name is Xu Ran, currently working as a research assistant at the University of Essex. 
-                        I have experience in multiple robotics application projects, such as smart dressing systems, 
-                        robot learning, and smart garbage sorting. My research primarily focuses on robot control 
-                        and deep learning, and I am committed to applying advanced robotics technology to the 
-                        fields of medical assistance and industrial collaboration.
-                        Welcome to visit my project videos and related research results!
-                    </p>
-                    <div class="contact-info" style="margin-top: 20px;">
-                        <ul style="list-style: none; padding-left: 0; font-size: 1.1em;">
-                            <li><i class="fa fa-map-marker"></i> Colchester, UK</li>
-                            <li><i class="fa fa-university"></i> University of Essex</li>
-                            <li><i class="fa fa-envelope"></i> <a href="mailto:allanxuran@gmail.com">allanxuran@gmail.com</a></li>
-                        </ul>
-                    </div>
-                </div>
+            <!-- 头像和文字 -->
+            <div style="text-align: center;">
+                <img src="img/ava.jpg" alt="Avatar" style="max-width: 180px; border-radius: 20%;">
+            </div>
+            <p>
+                My name is Xu Ran, currently working as a research assistant at the University of Essex. 
+                I have experience in multiple robotics application projects, such as smart dressing systems, 
+                robot learning, and smart garbage sorting. My research primarily focuses on robot control 
+                and deep learning, and I am committed to applying advanced robotics technology to the 
+                fields of medical assistance and industrial collaboration.
+                Welcome to visit my project videos and related research results!
+            </p>
+            <div class="contact-info" style="margin-top: 20px;">
+                <ul style="list-style: none; padding-left: 0; font-size: 1.1em;">
+                    <li><i class="fa fa-map-marker"></i> Colchester, UK</li>
+                    <li><i class="fa fa-university"></i> University of Essex</li>
+                    <li><i class="fa fa-envelope"></i> <a href="mailto:allanxuran@gmail.com">allanxuran@gmail.com</a></li>
+                </ul>
             </div>
         </div>
     </div>
 
-    <!-- Work Experience / Projects -->
-    <div class="work section second" id="experiences">
-        <div class="container">
+    <!-- 右侧主要内容 -->
+    <div class="right-column">
+        <!-- Projects -->
+        <div class="work section second" id="experiences">
             <h1>Projects</h1>
-            <!-- Project 1: Intelligent Dressing (对应两个视频，并排显示) -->
+
+            <!-- Project 1 -->
             <ul class="work-list">
                 <li>Sep 2024 - Feb 2025</li>
                 <li><a href="#">Intelligent Dressing: Integrating Vision Perception with Neural Trajectory Planning in a Bimanual Robotic System</a></li>
                 <li>Web Designer</li>
             </ul>
-            <div class="project-videos flex-row">
-                <video controls>
+            <div class="project-videos flex-row" style="display: flex; gap: 10px; margin-bottom: 20px;">
+                <video controls style="flex: 1;">
                     <source src="videos/dressing1.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
                 </video>
-                <video controls>
+                <video controls style="flex: 1;">
                     <source src="videos/dressing2.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
                 </video>
             </div>
 
-            <!-- Project 2: Robotic Demonstration Learning (对应两个视频，并排显示) -->
+            <!-- Project 2 -->
             <ul class="work-list">
                 <li>Dec 2024 - Mar 2025</li>
                 <li><a href="#">Robotic Demonstration Learning and Adaptive Motion Generation</a></li>
                 <li>UI/UX Designer</li>
             </ul>
-            <div class="project-videos flex-row">
-                <video controls>
+            <div class="project-videos flex-row" style="display: flex; gap: 10px; margin-bottom: 20px;">
+                <video controls style="flex: 1;">
                     <source src="videos/demonstration1.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
                 </video>
-                <video controls>
+                <video controls style="flex: 1;">
                     <source src="videos/demonstration2.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
                 </video>
             </div>
 
-            <!-- Project 3: Trajectory Generation (对应一个视频) -->
+            <!-- Project 3 -->
             <ul class="work-list">
                 <li>Feb 2025 - Present</li>
                 <li><a href="#">Trajectory generation and control of crop picking robots driven by PointNet</a></li>
@@ -124,22 +133,17 @@
             <div class="project-videos" style="margin-bottom: 20px;">
                 <video controls width="560">
                     <source src="videos/trajectory.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
                 </video>
             </div>
         </div>
-    </div>
 
-    <!-- Quote -->
-    <div class="quote">
-        <div class="container text-centered">
+        <!-- Quote -->
+        <div class="quote">
             <h1>fight against the ugliness.</h1>
         </div>
     </div>
 
-    <!-- 已删除 Footer -->
-
-    <!-- Javascript -->
+    <!-- JS 脚本部分 -->
     <script src="js/jquery.min.js"></script>
     <script src="js/typed.min.js"></script>
     <script src="js/kube.min.js"></script>
