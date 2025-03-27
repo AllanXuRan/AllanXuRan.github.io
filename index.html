@@ -11,54 +11,77 @@
     <link rel="shortcut icon" href="img/favicon.png" />
     <link href='https://fonts.googleapis.com/css?family=Playfair+Display+SC:700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+
     <style>
-        /* 让页面顶部导航固定 */
+        /* 清除默认边距 */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 顶部导航固定在顶部 */
         .main-nav {
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 999;
         }
-        body {
-            margin: 0;
-            padding: 0;
-        }
 
-        /* 左侧固定栏（个人简介） */
+        /* 左侧个人简介栏（桌面端） */
         .left-column {
             position: fixed;
-            top: 60px;       /* 根据导航栏实际高度微调 */
+            top: 60px;        /* 与导航栏高度保持一致，可根据实际情况微调 */
             left: 0;
-            width: 400px;    /* 左侧宽度 */
+            width: 400px;     /* 左侧栏宽度 */
             bottom: 0;
-            overflow-y: auto;
-            background: #fff; /* 可根据需要换颜色 */
+            overflow-y: auto; /* 若内容超出则滚动 */
+            background: #fff;
             padding: 20px;
         }
 
-        /* 右侧固定栏（空白） */
+        /* 右侧空白栏（桌面端） */
         .right-column {
             position: fixed;
-            top: 60px;       /* 同导航高度 */
+            top: 60px;
             right: 0;
-            width: 400px;    /* 与左侧相同宽度 */
+            width: 400px;     /* 与左侧栏宽度一致 */
             bottom: 0;
-            background: #fff; 
-            /* 如果希望完全空白，可以改为 transparent，或者保持白色 */
+            background: #fff; /* 你可以改成别的颜色，或设为 transparent */
         }
 
-        /* 中间主内容，让出左右 400px 空间 */
+        /* 中间内容区域（桌面端），留出左右 400px 空间 */
         .center-content {
-            margin: 60px 400px 0 400px;  /* 上侧给导航留 60px，下侧可根据需要调整 */
+            margin: 60px 400px 0 400px; /* 上方留60px给导航，左右各留400px */
             padding: 20px;
         }
 
-        /* 个人简介中的标题（可自行修改） */
+        /* 个人简介中的标题 */
         .intro h1:before {
             content: 'Xu Ran';
         }
+
+        /* ========== 响应式：小屏幕时变为单列布局 ========== */
+        @media (max-width: 992px) {
+            /* 1. 取消左侧固定，改为正常流 */
+            .left-column {
+                position: static;
+                width: auto;
+                height: auto;
+                overflow: visible;
+                background: #fff;
+            }
+            /* 2. 隐藏右侧空白栏或让它也变为正常流（这里选择隐藏） */
+            .right-column {
+                display: none; 
+            }
+            /* 3. 中间内容全宽显示 */
+            .center-content {
+                margin: 60px 0 0 0; /* 去掉左右 400px */
+            }
+        }
     </style>
 </head>
+
 <body>
     <!-- 顶部导航 -->
     <div class="main-nav">
@@ -77,11 +100,10 @@
         </div>
     </div>
 
-    <!-- 左侧固定栏：个人简介 -->
+    <!-- 左侧个人简介栏 -->
     <div class="left-column">
         <div class="intro" id="about">
             <p>Hi</p>
-            <!-- 头像和文字 -->
             <div style="text-align: center;">
                 <img src="img/ava.jpg" alt="Avatar" style="max-width: 300px; border-radius: 20%;">
             </div>
@@ -103,12 +125,10 @@
         </div>
     </div>
 
-    <!-- 右侧固定栏：留白（空白区域） -->
-    <div class="right-column">
-        <!-- 这里什么都不放 -->
-    </div>
+    <!-- 右侧空白栏（桌面端显示，小屏隐藏） -->
+    <div class="right-column"></div>
 
-    <!-- 中间主要内容（可滚动） -->
+    <!-- 中间主要内容 -->
     <div class="center-content">
         <!-- Projects -->
         <div class="work section second" id="experiences">
