@@ -30,11 +30,11 @@
         /* 左侧个人简介栏（桌面端） */
         .left-column {
             position: fixed;
-            top: 60px;        /* 与导航栏高度保持一致，可根据实际情况微调 */
+            top: 60px;        
             left: 0;
-            width: 400px;     /* 左侧栏宽度 */
+            width: 400px;     
             bottom: 0;
-            overflow-y: auto; /* 若内容超出则滚动 */
+            overflow-y: auto; 
             background: #fff;
             padding: 20px;
         }
@@ -44,14 +44,14 @@
             position: fixed;
             top: 60px;
             right: 0;
-            width: 400px;     /* 与左侧栏宽度一致 */
+            width: 400px;     
             bottom: 0;
-            background: #fff; /* 你可以改成别的颜色，或设为 transparent */
+            background: #fff; 
         }
 
         /* 中间内容区域（桌面端），留出左右 400px 空间 */
         .center-content {
-            margin: 60px 400px 0 400px; /* 上方留60px给导航，左右各留400px */
+            margin: 60px 400px 0 400px; 
             padding: 20px;
         }
 
@@ -60,9 +60,9 @@
             content: 'Xu Ran';
         }
 
-        /* 项目标题设置为蓝色 */
+        /* 项目标题设置为淡蓝色 */
         .project-title {
-            color: blue;
+            color: #ADD8E6;
             text-decoration: none;
         }
         .project-title:hover {
@@ -76,7 +76,6 @@
 
         /* ========== 响应式：小屏幕时变为单列布局 ========== */
         @media (max-width: 992px) {
-            /* 1. 取消左侧固定，改为正常流 */
             .left-column {
                 position: static;
                 width: auto;
@@ -84,13 +83,11 @@
                 overflow: visible;
                 background: #fff;
             }
-            /* 2. 隐藏右侧空白栏 */
             .right-column {
                 display: none; 
             }
-            /* 3. 中间内容全宽显示 */
             .center-content {
-                margin: 60px 0 0 0; /* 去掉左右 400px */
+                margin: 60px 0 0 0;
             }
         }
     </style>
@@ -102,7 +99,7 @@
         <div class="container">
             <header class="group top-nav">
                 <div class="navigation-toggle" data-tools="navigation-toggle" data-target="#navbar-1">
-                    <span class="logo">More</span>
+                    <span class="logo">DRACO</span>
                 </div>
                 <nav id="navbar-1" class="navbar item-nav">
                     <ul>
@@ -148,10 +145,15 @@
         <div class="work section second" id="experiences">
             <h1>Projects</h1>
 
-            <!-- Project 1 -->
+            <!-- Project 1: Intelligent Dressing -->
             <ul class="work-list">
                 <li>Sep 2024 - Feb 2025</li>
-                <li><a href="#" class="project-title">Intelligent Dressing: Integrating Vision Perception with Neural Trajectory Planning in a Bimanual Robotic System</a></li>
+                <li>
+                    <a href="#" class="project-title">
+                        Intelligent Dressing: Integrating Vision Perception with Neural Trajectory Planning in a Bimanual Robotic System
+                    </a>
+                </li>
+                <li>Web Designer</li>
             </ul>
             <!-- 描述栏 -->
             <div class="project-description">
@@ -166,10 +168,15 @@
                 </video>
             </div>
             
-            <!-- Project 2 -->
+            <!-- Project 2: Robotic Demonstration Learning -->
             <ul class="work-list">
                 <li>Dec 2024 - Mar 2025</li>
-                <li><a href="#" class="project-title">Robotic Demonstration Learning and Adaptive Motion Generation</a></li>
+                <li>
+                    <a href="#" class="project-title">
+                        Robotic Demonstration Learning and Adaptive Motion Generation
+                    </a>
+                </li>
+                <li>UI/UX Designer</li>
             </ul>
             <!-- 描述栏 -->
             <div class="project-description">
@@ -184,18 +191,46 @@
                 </video>
             </div>
             
-            <!-- Project 3 -->
+            <!-- Project 3: Crop Picking Robots (农业抓取) -->
             <ul class="work-list">
                 <li>Feb 2025 - Present</li>
-                <li><a href="#" class="project-title">Trajectory generation and control of crop picking robots driven by PointNet</a></li>
+                <li>
+                    <a href="#" class="project-title">
+                        Trajectory Generation and Control of Crop Picking Robots Driven by PointNet
+                    </a>
+                </li>
+                <li>System Designer</li>
             </ul>
             <!-- 描述栏 -->
             <div class="project-description">
-                <p>Description for Trajectory Generation project goes here.</p>
+                <p>Description for Crop Picking Robots project goes here.</p>
+            </div>
+            <div class="project-videos flex-row" style="display: flex; gap: 10px; margin-bottom: 20px;">
+                <video controls style="flex: 1;">
+                    <source src="videos/trajectory1.mp4" type="video/mp4">
+                </video>
+                <video controls style="flex: 1;">
+                    <source src="videos/trajectory2.mp4" type="video/mp4">
+                </video>
+            </div>
+            
+            <!-- Project 4: Smart Garbage Sorting -->
+            <ul class="work-list">
+                <li>Mar 2025 - Present</li>
+                <li>
+                    <a href="#" class="project-title">
+                        Smart Garbage Sorting
+                    </a>
+                </li>
+                <li>System Designer</li>
+            </ul>
+            <!-- 描述栏 -->
+            <div class="project-description">
+                <p>Description for Smart Garbage Sorting project goes here.</p>
             </div>
             <div class="project-videos" style="margin-bottom: 20px;">
                 <video controls width="560">
-                    <source src="videos/trajectory.mp4" type="video/mp4">
+                    <source src="videos/garbage.mp4" type="video/mp4">
                 </video>
             </div>
         </div>
